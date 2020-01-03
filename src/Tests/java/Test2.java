@@ -11,9 +11,10 @@ public class Test2 extends TestBase{
         System.out.println("Starting Test 1");
         driver.get(prop.getProperty("testURL"));
 
-        PageObject page = PageFactory.initElements(driver, PageObject.class);
+        HotelSearchPage page = PageFactory.initElements(driver, HotelSearchPage.class);
         page.setCalendar("2020-01-15", "2020-02-01");
         page.setDestination("London");
-        page.finish();
+        page.checkPrices();
+        page.checkResults();
     }
 }

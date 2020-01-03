@@ -13,7 +13,7 @@ public class TestBase {
     @BeforeMethod
     public void geckoSetter() throws IOException {
         prop = new Properties();
-        prop.load(new FileInputStream("src/test/TestProperties.properties"));
+        prop.load(new FileInputStream("src/Tests/TestProperties.properties"));
         System.setProperty("webdriver.gecko.driver", prop.getProperty("geckoDriver.location"));
         System.setProperty("webdriver.gecko.driver","R:\\Selenium\\geckodriver.exe");
 

@@ -11,8 +11,9 @@ public class Test1 extends TestBase {
         System.out.println("Starting Test 1");
         driver.get(prop.getProperty("testURL"));
 
-        PageObject page = PageFactory.initElements(driver, PageObject.class);
+        HotelSearchPage page = PageFactory.initElements(driver, HotelSearchPage.class);
         page.setDestination("Moscow");
-        page.finish();
+        page.checkPrices();
+        page.checkResults();
     }
 }
