@@ -1,30 +1,18 @@
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
-//booking.com driver
-
-
-public class Test1 {
-    private static WebDriver driver;
-    private static String url = "https://www.booking.com";
-
-    @Before
-    public void init() {
-        System.setProperty("webdriver.gecko.driver","R:\\Selenium\\geckodriver.exe");
-        driver = new FirefoxDriver();
-    }
+public class Test1 extends TestBase {
 
     @Test
     public void testDestination() throws Exception {
-        init();
-        System.out.println("Starting Test 1"    );
-        driver.get(url);
+
+        driver = new FirefoxDriver();
+        System.out.println("Starting Test 1");
+        driver.get(prop.getProperty("testURL"));
+
         PageObject page = PageFactory.initElements(driver, PageObject.class);
         page.setDestination("Moscow");
         page.finish();
-        driver.close();
     }
 }
