@@ -1,6 +1,6 @@
 package com.driver.testing;
 
-import pages.LoginPage;
+import com.driver.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

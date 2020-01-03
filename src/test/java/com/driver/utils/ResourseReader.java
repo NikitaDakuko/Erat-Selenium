@@ -1,4 +1,4 @@
-package utils;
+package com.driver.utils;
 
 import java.util.ResourceBundle;
 

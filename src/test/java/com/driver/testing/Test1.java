@@ -1,6 +1,6 @@
 package com.driver.testing;
 
-import pages.HotelSearchPage;
+import com.driver.pages.HotelSearchPage;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;

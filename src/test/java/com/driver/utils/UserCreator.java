@@ -1,6 +1,6 @@
-package utils;
+package com.driver.utils;
 
-import model.UserModel;
+import com.driver.model.UserModel;
 
 public class UserCreator {
 
