@@ -1,8 +1,11 @@
+package pages;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
+import java.util.Properties;
 
 public class HotelSearchPage extends SearchResultsPage {
 
@@ -18,22 +21,24 @@ public class HotelSearchPage extends SearchResultsPage {
     @FindBy (className = "bui-calendar__control--next")
     private WebElement calendarNextButton;
 
+    protected HotelSearchPage(WebDriver driver, Properties prop) {
+        super(driver, prop);
+    }
 
 
-
-    void setDestination(String string){
+    public void setDestination(String string){
         System.out.println("Setting Destination");
         destination.sendKeys(string);
     }
 
-    void setCalendar(String date1 , String date2){
+    public void setCalendar(String date1, String date2){
         System.out.println("Setting Date");
         calendar.click();
         calendar.findElement(By.xpath("//*[@data-date='"+ date1 + "']")).click();
         calendar.findElement(By.xpath("//*[@data-date='"+ date2 + "']")).click();
     }
 
-    void checkPrices(){
+    public void checkPrices(){
         button.click();
     }
 }

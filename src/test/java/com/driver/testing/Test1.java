@@ -1,3 +1,6 @@
+package com.driver.testing;
+
+import pages.HotelSearchPage;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -9,7 +12,6 @@ public class Test1 extends CommonConditions {
 
         driver = new FirefoxDriver();
         System.out.println("Starting Test 1");
-        driver.get(prop.getProperty("URL.Test.Search"));
 
         HotelSearchPage page = PageFactory.initElements(driver, HotelSearchPage.class);
         page.setDestination("Moscow");
