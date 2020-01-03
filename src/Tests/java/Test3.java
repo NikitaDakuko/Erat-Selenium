@@ -2,10 +2,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-public class Test1 extends CommonConditions {
+public class Test3 extends CommonConditions {
 
     @Test
-    public void testDestination() throws Exception {
+    public void testLogin() throws Exception {
 
         driver = new FirefoxDriver();
         System.out.println("Starting Test 1");

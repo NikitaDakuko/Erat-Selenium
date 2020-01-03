@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class TestBase {
+public class CommonConditions {
     protected static WebDriver driver;
     protected static Properties prop;
 
