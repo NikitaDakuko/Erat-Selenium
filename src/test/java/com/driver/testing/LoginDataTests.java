@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class LoginDataTests extends CommonConditions{
 
     @Test
-    public void sendIncorrectEmail() {
+    public void TestIncorrectEmail() {
         String errorMessage = new LoginPage(driver)
                 .openPage()
                 .sendEmailData("asdfadf")
@@ -17,7 +17,7 @@ public class LoginDataTests extends CommonConditions{
     }
 
     @Test
-    public void signInWithEmptyEmail(){
+    public void TestEmptyEmail(){
         String errorMessage = new LoginPage(driver)
                 .openPage()
                 .sendEmailData()
@@ -26,7 +26,7 @@ public class LoginDataTests extends CommonConditions{
     }
 
     @Test
-    public void signInWithIncorrectPassword(){
+    public void TestIncorrectPassword(){
         String errorMessage = new LoginPage(driver)
                 .openPage()
                 .sendEmailData(ResourceReader.get("Login.Email"))
@@ -36,7 +36,7 @@ public class LoginDataTests extends CommonConditions{
     }
 
     @Test
-    public void signInWithEmptyPassword(){
+    public void TestEmptyPassword(){
         String errorMessage = new LoginPage(driver)
                 .openPage()
                 .sendEmailData(ResourceReader.get("Login.Email"))
@@ -46,7 +46,7 @@ public class LoginDataTests extends CommonConditions{
     }
 
     @Test
-    public void signInWithEmailAndPassword(){
+    public void TestLogin(){
         String welcomeMessage = new LoginPage(driver)
                 .openPage()
                 .sendEmailData(ResourceReader.get("Login.Email"))
