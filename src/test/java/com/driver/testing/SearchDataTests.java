@@ -12,7 +12,7 @@ public class SearchDataTests extends CommonConditions {
 
     @Test
     public void TestDestination() {
-        List<WebElement> result = new HotelSearchPage(driver)
+        List<WebElement> result = new HotelSearchPage(this.driver)
                 .openPage()
                 .setDestination(ResourceReader.get("Search.Destination"))
                 .checkPrices();
@@ -21,7 +21,7 @@ public class SearchDataTests extends CommonConditions {
 
     @Test
     public void TestDate() {
-        List<WebElement> result = new HotelSearchPage(driver)
+        List<WebElement> result = new HotelSearchPage(this.driver)
                 .openPage()
                 .setDestination(ResourceReader.get("Search.Destination"))
                 .setCalendar(ResourceReader.get("Search.CheckIn.Date"),
