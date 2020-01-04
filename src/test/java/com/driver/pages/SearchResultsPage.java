@@ -1,12 +1,12 @@
 package com.driver.pages;
 
+import com.driver.utils.ResourceReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.Properties;
 
 public class SearchResultsPage extends AbstractPage{
     @FindBy(id = "hotellist_inner")
@@ -14,8 +14,8 @@ public class SearchResultsPage extends AbstractPage{
 
     private List<WebElement> results;
 
-    protected SearchResultsPage(WebDriver driver, Properties prop) {
-        super(driver, prop);
+    protected SearchResultsPage(WebDriver driver) {
+        super(driver);
     }
 
     List<WebElement> getResults(){
@@ -34,7 +34,7 @@ public class SearchResultsPage extends AbstractPage{
 
     @Override
     protected AbstractPage openPage() {
-        driver.get(props.getProperty("URL.Test.Search"));
+        driver.get(ResourceReader.get("URL.Test.Search"));
         return null;
     }
 

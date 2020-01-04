@@ -21,8 +21,8 @@ public class HotelSearchPage extends SearchResultsPage {
     @FindBy (className = "bui-calendar__control--next")
     private WebElement calendarNextButton;
 
-    protected HotelSearchPage(WebDriver driver, Properties prop) {
-        super(driver, prop);
+    protected HotelSearchPage(WebDriver driver) {
+        super(driver);
     }
 
 

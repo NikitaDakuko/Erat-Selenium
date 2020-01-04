@@ -1,38 +1,47 @@
 package com.driver.testing;
 
 import com.driver.pages.LoginPage;
+import com.driver.utils.ResourceReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class IncorrectLoginDataPassTests extends CommonConditions{
 
     @Test
-    public void sendDealToIncorrectEmail() {
-        String errorMessage = new LoginPage(driver, prop)
+    public void sendIncorrectEmail() {
+        String errorMessage = new LoginPage(driver)
                 .openPage()
-                .sendDealTo("asdfadf")
-                .getErrorMessageFromSendDeal();
-        Assert.assertEquals(errorMessage, prop.getProperty("INVALID_EMAIL_ERROR_MESSAGE"));
+                .sendEmailData("asdfadf")
+                .getEmailErrorMessage();
+        Assert.assertEquals(errorMessage, ResourceReader.get("INVALID_EMAIL_ERROR_MESSAGE"));
     }
 
- /*   @Test
+    @Test
     public void signInWithEmptyEmail(){
-
-        UserModel testUser = UserCreator.withEmptyUserEmail();
-        String errorMessage = new LoginPage(driver, prop)
+        String errorMessage = new LoginPage(driver)
                 .openPage()
-                .loginWithEmptyEmail(testUser)
-                .getErrorMessageFromSignInEmailInput();
-        Assert.assertEquals(errorMessage, prop.getProperty("BLANK_EMAIL_ERROR_MESSAGE"));
+                .sendEmailData()
+                .getEmailErrorMessage();
+        Assert.assertEquals(errorMessage, ResourceReader.get("BLANK_EMAIL_ERROR_MESSAGE"));
+    }
+
+    @Test
+    public void signInWithIncorrectPassword(){
+        String errorMessage = new LoginPage(driver)
+                .openPage()
+                .sendEmailData(ResourceReader.get("Login.Email"))
+                .sendPasswordData("asdfadf")
+                .getPasswordErrorMessage();
+        Assert.assertEquals(errorMessage, ResourceReader.get("WRONG_PASSWORD_ERROR_MESSAGE"));
     }
 
     @Test
     public void signInWithEmptyPassword(){
-        UserModel testUser = UserCreator.withEmptyPassword();
-        String errorMessage = new LoginPage(driver, prop)
+        String errorMessage = new LoginPage(driver)
                 .openPage()
-                .loginWithEmptyPassword(testUser)
-                .getErrorMessageFromSignInPasswordInput();
-        Assert.assertEquals(errorMessage, prop.getProperty("BLANK_PASSWORD_ERROR_MESSAGE"));
-    }*/
+                .sendEmailData(ResourceReader.get("Login.Email"))
+                .sendPasswordData()
+                .getPasswordErrorMessage();
+        Assert.assertEquals(errorMessage, ResourceReader.get("BLANK_PASSWORD_ERROR_MESSAGE"));
+    }
 }
