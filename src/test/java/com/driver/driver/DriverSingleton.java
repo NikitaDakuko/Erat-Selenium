@@ -1,15 +1,14 @@
 package com.driver.driver;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverSingleton {
     protected static WebDriver driver;
 
     public static WebDriver getDriver() {
         if (driver == null){
-            System.setProperty("webdriver.gecko.driver", "R:/Selenium/geckodriver.exe");
-            driver = new FirefoxDriver();
+            driver = DriverSingleton.getDriver();
         }
         return driver;
     }
