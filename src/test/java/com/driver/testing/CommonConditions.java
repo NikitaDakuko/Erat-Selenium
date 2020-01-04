@@ -9,7 +9,8 @@ public class CommonConditions {
     protected static WebDriver driver;
 
     @BeforeMethod()
-    public void setUp() { driver = DriverSingleton.getDriver(); }
+    public void setUp() {
+        driver = DriverSingleton.getDriver(); }
 
     @AfterMethod(alwaysRun = true)
     public void killBrowser(){ driver.close(); }

@@ -6,9 +6,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>Selenium Framework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.testing</groupId>
+    <artifactId>booking-automation</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <name>BookingAutomation</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <selenium.version>2.53.1</selenium.version>
+        <testng.version>6.9.10</testng.version>
+    </properties>
 
 
     <build>
@@ -17,8 +25,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <includes>src</includes>
                     <source>1.8</source>
                     <target>1.8</target>
+
                 </configuration>
             </plugin>
         </plugins>
@@ -39,12 +49,12 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M4</version>
+        </dependency>
     </dependencies>
-
-
-    <properties>
-        <selenium.version>2.53.1</selenium.version>
-        <testng.version>6.9.10</testng.version>
-    </properties>
 
 </project>
