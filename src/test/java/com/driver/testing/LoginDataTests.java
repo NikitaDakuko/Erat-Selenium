@@ -5,7 +5,7 @@ import com.driver.utils.ResourceReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class IncorrectLoginDataPassTests extends CommonConditions{
+public class LoginDataTests extends CommonConditions{
 
     @Test
     public void sendIncorrectEmail() {
@@ -43,5 +43,15 @@ public class IncorrectLoginDataPassTests extends CommonConditions{
                 .sendPasswordData()
                 .getPasswordErrorMessage();
         Assert.assertEquals(errorMessage, ResourceReader.get("BLANK_PASSWORD_ERROR_MESSAGE"));
+    }
+
+    @Test
+    public void signInWithEmailAndPassword(){
+        String welcomeMessage = new LoginPage(driver)
+                .openPage()
+                .sendEmailData(ResourceReader.get("Login.Email"))
+                .sendPasswordData(ResourceReader.get("Login.Password"))
+                .getWelcomeText();
+        Assert.assertEquals(welcomeMessage, ResourceReader.get("SUCCESS_LOGIN_WELCOME_TEXT"));
     }
 }

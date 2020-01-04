@@ -29,6 +29,9 @@ public class LoginPage extends AbstractPage {
     @FindBy(id = "password-error")
     private WebElement passwordErrorMessage;
 
+    @FindBy(className = "sb-searchbox__title-text")
+    private WebElement welcomeText;
+
     public LoginPage(WebDriver driver){
         super(driver);
         PageFactory.initElements(this.driver, this);
@@ -71,4 +74,6 @@ public class LoginPage extends AbstractPage {
     public String getPasswordErrorMessage(){
         return passwordErrorMessage.getText();
     }
+
+    public String getWelcomeText(){ return welcomeText.getText(); }
 }
