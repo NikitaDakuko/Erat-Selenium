@@ -2,8 +2,6 @@ package com.driver.pages;
 
 import org.openqa.selenium.WebDriver;
 
-import java.util.Properties;
-
 public abstract class AbstractPage{
     protected WebDriver driver;
 
